@@ -4,11 +4,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/tallstreet/graphql/schema"
 	"github.com/tallstreet/graphql/executor"
 	"github.com/tallstreet/graphql/handler"
+	"github.com/tallstreet/graphql/schema"
 	"github.com/tallstreet/starwarsgraphqlgo/graph"
-	
 )
 
 type App struct {
@@ -17,14 +16,12 @@ type App struct {
 
 var Application *App
 
-
 func NewApp(address string) *App {
 	app := new(App)
 	app.address = address
 
 	return app
 }
-
 
 func (app *App) RunServer() {
 	g := graph.NewGraph()

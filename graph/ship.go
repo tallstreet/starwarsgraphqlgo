@@ -8,7 +8,7 @@ import (
 )
 
 type Ship struct {
-	Id string
+	Id   string
 	Name string
 }
 

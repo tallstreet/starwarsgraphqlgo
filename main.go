@@ -32,7 +32,6 @@ import (
 	"github.com/tallstreet/starwarsgraphqlgo/server"
 )
 
-
 var listenAddr = flag.String("l", ":8080", "listen addr")
 
 func main() {

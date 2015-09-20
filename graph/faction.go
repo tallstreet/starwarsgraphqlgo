@@ -8,11 +8,10 @@ import (
 )
 
 type Faction struct {
-	Id string
-	Name string
+	Id    string
+	Name  string
 	Ships []*Ship
 }
-
 
 func (faction Faction) GraphQLTypeInfo() schema.GraphQLTypeInfo {
 	return schema.GraphQLTypeInfo{
