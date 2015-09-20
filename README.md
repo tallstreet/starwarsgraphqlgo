@@ -1,6 +1,6 @@
 # StarWars GraphQL Go
 
-Program starwarsgraphqlgo shows a simple HTTP server that exposes a bare schema.
+Program starwarsgraphqlgo shows a simple HTTP server that exposes a bare schema and allows you to query simple data via GraphQL
 
 Example:
 
