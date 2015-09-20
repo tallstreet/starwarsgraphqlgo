@@ -8,6 +8,7 @@ import (
 )
 
 type Ship struct {
+	Id string
 	Name string
 }
 
@@ -16,6 +17,13 @@ func (ship Ship) GraphQLTypeInfo() schema.GraphQLTypeInfo {
 		Name:        "Ship",
 		Description: "A Star Wars Ship",
 		Fields: schema.GraphQLFieldSpecMap{
+			"id": {
+				Name:        "id",
+				Description: "The id of ship.",
+				Func: func(ctx context.Context, r resolver.Resolver, f *graphql.Field) (interface{}, error) {
+					return r.Resolve(ctx, ship.Id, f)
+				},
+			},
 			"name": {
 				Name:        "name",
 				Description: "The name of ship.",

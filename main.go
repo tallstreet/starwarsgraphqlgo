@@ -4,26 +4,20 @@
 //  $ go get github.com/tallstreet/graphql/example/basic_graphql_server
 //  $ basic_graphql_server &
 //  $ curl -g -XPOST 'http://localhost:8080/' --data-binary '{ "query": "{__schema{types{name,description,fields{name}}}}"}'
-//  $ curl -g -XPOST 'http://localhost:8080/' --data-binary '{ "query": "query faction(id: \"2\"){ id, name } "}'
+//  $ curl -g -XPOST 'http://localhost:8080/' --data-binary '{ "query": "query gary { factions(id: \"2\") {  name, ships { name }  } } "}'
 // {
 //   "data": {
-//     "faction": {
-//       "Name": "Alliance to Restore the Republic",
-//       "Ships": [
+//     "factions": {
+//       "name": "Galactic Empire",
+//       "ships": [
 //         {
-//           "Name": "X-Wing"
+//           "name": "Executor"
 //         },
 //         {
-//           "Name": "Y-Wing"
+//           "name": "TIE Fighter"
 //         },
 //         {
-//           "Name": "A-Wing"
-//         },
-//         {
-//           "Name": "Millenium Falcon"
-//         },
-//         {
-//           "Name": "Home One"
+//           "name": "TIE Interceptor"
 //         }
 //       ]
 //     }

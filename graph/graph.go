@@ -19,38 +19,47 @@ func NewGraph() *Graph {
 	graph.Factions = make(map[string]*Faction)
 	
 	graph.Ships["1"] = &Ship{
+		Id: "1",
         Name: "X-Wing",
     }
 	
 	graph.Ships["2"] = &Ship{
+		Id: "2",
         Name: "Y-Wing",
     }
 	
 	graph.Ships["3"] = &Ship{
+		Id: "3",
         Name: "A-Wing",
     }
 	
 	graph.Ships["4"] = &Ship{
+		Id: "4",
         Name: "Millenium Falcon",
     }
 	
 	graph.Ships["5"] = &Ship{
+		Id: "5",
         Name: "Home One",
     }
 	
 	graph.Ships["6"] = &Ship{
+		Id: "6",
         Name: "TIE Fighter",
     }
 	
 	graph.Ships["7"] = &Ship{
+		Id: "7",
         Name: "TIE Interceptor",
     }
 	
 	graph.Ships["8"] = &Ship{
+		Id: "8",
         Name: "Executor",
     }
 	
 	graph.Factions["1"] = &Faction{
+		Id: "1",
         Name: "Alliance to Restore the Republic",
 		Ships: []*Ship{
 			graph.Ships["1"], 
@@ -62,6 +71,7 @@ func NewGraph() *Graph {
     }
 	
 	graph.Factions["2"] = &Faction{
+		Id: "2",
         Name: "Galactic Empire",
 		Ships: []*Ship{
 			graph.Ships["6"], 

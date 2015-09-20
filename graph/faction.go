@@ -1,7 +1,6 @@
 package graph
 
 import (
-	"fmt"
 	"github.com/tallstreet/graphql"
 	"github.com/tallstreet/graphql/executor/resolver"
 	"github.com/tallstreet/graphql/schema"
@@ -9,6 +8,7 @@ import (
 )
 
 type Faction struct {
+	Id string
 	Name string
 	Ships []*Ship
 }
@@ -19,6 +19,13 @@ func (faction Faction) GraphQLTypeInfo() schema.GraphQLTypeInfo {
 		Name:        "Faction",
 		Description: "A Star Wars Faction",
 		Fields: schema.GraphQLFieldSpecMap{
+			"id": {
+				Name:        "id",
+				Description: "The id of faction.",
+				Func: func(ctx context.Context, r resolver.Resolver, f *graphql.Field) (interface{}, error) {
+					return r.Resolve(ctx, faction.Id, f)
+				},
+			},
 			"name": {
 				Name:        "name",
 				Description: "The name of faction.",
